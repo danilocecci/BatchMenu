@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION 
+ SCROLL="no" 
+ SYSMENU="yes" 
+ ICON="utils/janelinha.ico"
+ VERSION="1.0"
+ INNERBORDER="no"
+ BORDER="yes"
+>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Batch Menu</TITLE>
+
+
+<SCRIPT type="text/javascript" language="JavaScript">
+var terminal = new ActiveXObject("WScript.Shell");
+
+window.resizeTo(369,225);
+window.moveTo((screen.width - 369)  / 2, (screen.height - 225) / 2);
+
+function executaInstalaMe(){
+   terminal.Run("..\\!instalaMe.bat");
+}
+
+function executaFasterMe(){
+   terminal.Run("..\\Bats\\fasterMe.bat");
+}
+
+function executaConfigMe(){
+   terminal.Run("..\\Bats\\IPConfig\\NETCONFIG.bat");
+}
+
+function executaPowerMe(){
+   terminal.Run("..\\Bats\\powerMe.bat");
+}
+
+function executaSintaxeMe(){
+   terminal.Run("..\\Bats\\sintaxeMe.bat");
+}
+
+function executaInstala4erro(){
+   var caminho = '"..\\INSTALAÇÃO PADRÃO\\Instala 4R Tecnologia 2022\\Instalador4RTecnologia.exe"';
+   terminal.Run(caminho);
+}
+
+</SCRIPT>
+
+
+<STYLE type="text/css">
+ body {
+	font-family: Georgia;
+	justify-content: space-between;
+	display: flex;
+}
+
+h4 {
+	text-align: center;
+}
+
+ .btn {
+	margin: 5px 5px 0px 5px ;
+	padding: 8px;
+	border: 1px solid #808080;
+	width: 100px
+}
+
+.assinatura {
+	font-size: 10px;
+	margin: 5px 0px 0px 275px;
+}
+
+</STYLE>
+</HEAD>
+
+<BODY>
+   <h4>O que deseja fazer?</h4>
+   <button class="btn" onclick="executaInstalaMe();" Title="Configura o ambiente do sistema e instala aplicativos padrão">instalaMe</button>
+   <button class="btn" onclick="executaFasterMe();" Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos">fasterMe</button>
+   <button class="btn" onclick="executaInstala4erro();" Title="Instala programas do 4R">instala4erro</button>
+   </br>
+   <button class="btn" onclick="executaConfigMe();" Title="Abre a tela de configuração de IP">configMe</button>
+   <button class="btn" onclick="executaPowerMe();" Title="Configura o plano de energia para máximo desempenho">powerMe</button>
+   <button class="btn" onclick="executaSintaxeMe();" Title="Tira o ' - Atalho' dos atalhos do sistema">sintaxeMe</button>
+   <p class="assinatura">by Danilo</p>
+</BODY>
+</HTML>
